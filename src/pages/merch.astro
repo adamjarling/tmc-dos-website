@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MerchSection from '../components/MerchSection.astro';
+import { useTranslations } from '../i18n/ui';
+const t = useTranslations(Astro.currentLocale);
+---
+
+<Layout title={t('merch.heading')}>
+  <div style="height:64px"></div>
+  <MerchSection />
+</Layout>

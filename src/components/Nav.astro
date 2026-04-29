@@ -1,0 +1,70 @@
+---
+import { useTranslations, type Locale } from '../i18n/ui';
+import { localePath, NAV_ROUTES, switchLocale } from '../lib/i18n-paths';
+import { socials } from '../data/socials';
+import logo from '../assets/logos/tmc-logo-2026-white.png';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const currentPath = Astro.url.pathname;
+const otherLocale: Locale = locale === 'en' ? 'es' : 'en';
+const otherPath = switchLocale(currentPath, otherLocale);
+---
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href={localePath(locale, '/')} class="nav-logo">
+      <img src={logo.src} alt="The Midnight Calls" />
+    </a>
+    <button class="hamburger" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="overlay" id="nav-overlay">
+  <div class="overlay-dim"></div>
+  <button class="overlay-close" id="nav-close" aria-label="Close menu">×</button>
+  <nav class="overlay-nav">
+    {NAV_ROUTES.map(({ key, path }, i) => (
+      <a
+        href={localePath(locale, path)}
+        class="overlay-link"
+        style={`transition-delay: ${i * 0.05}s`}
+      >{t(`nav.${key}`)}</a>
+    ))}
+  </nav>
+  <div class="overlay-socials">
+    <a href={socials.instagram} target="_blank" rel="noopener" class="social-link">Instagram</a>
+    <a href={socials.spotify}   target="_blank" rel="noopener" class="social-link">Spotify</a>
+    <a href={socials.youtube}   target="_blank" rel="noopener" class="social-link">YouTube</a>
+    <a href={socials.bandcamp}  target="_blank" rel="noopener" class="social-link">Bandcamp</a>
+    <a href={otherPath} class="social-link">{locale === 'en' ? 'Español' : 'English'}</a>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const overlay = document.getElementById('nav-overlay');
+  const close = document.getElementById('nav-close');
+
+  function open() {
+    overlay?.classList.add('is-open');
+    toggle?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function shut() {
+    overlay?.classList.remove('is-open');
+    toggle?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  toggle?.addEventListener('click', () => {
+    overlay?.classList.contains('is-open') ? shut() : open();
+  });
+  close?.addEventListener('click', shut);
+  overlay?.querySelectorAll('.overlay-link').forEach((a) =>
+    a.addEventListener('click', shut),
+  );
+</script>

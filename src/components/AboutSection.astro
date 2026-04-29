@@ -1,0 +1,36 @@
+---
+import { useTranslations, pickLocale, type Locale } from '../i18n/ui';
+import { members } from '../data/members';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+---
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-header">
+      <span class="mag-label">{t('about.label')}</span>
+      <h2 class="mag-heading">{t('about.heading')}</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p class="pull-quote">"{t('about.pullQuote')}"</p>
+        <p class="pull-source">{t('about.pullSource')}</p>
+      </div>
+      <div class="about-cols">
+        <p>{t('about.p1')}</p>
+        <p>{t('about.p2')}</p>
+        <p>{t('about.p3')}</p>
+        <p set:html={t('about.p4')}></p>
+      </div>
+    </div>
+    <div class="members-strip">
+      {members.map((m) => (
+        <div class="member-card">
+          <p class="member-n">{m.name}</p>
+          <p class="member-r">{pickLocale(m.role, locale)}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

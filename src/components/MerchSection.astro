@@ -1,0 +1,35 @@
+---
+import { useTranslations, type Locale } from '../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const items = [
+  { key: 'vinyl', price: '$28' },
+  { key: 'tee',   price: '$25' },
+  { key: 'cap',   price: '$20' },
+] as const;
+---
+
+<section id="merch" class="section alt-bg">
+  <div class="container">
+    <span class="mag-label">{t('merch.label')}</span>
+    <h2 class="mag-heading">{t('merch.heading')}</h2>
+    <div class="merch-grid">
+      {items.map((item) => (
+        <div class="merch-card">
+          <div class="merch-img">
+            <div class="merch-placeholder">{t(`merch.items.${item.key}.name`).toUpperCase()}</div>
+          </div>
+          <div class="merch-row">
+            <div>
+              <p class="merch-name">{t(`merch.items.${item.key}.name`)}</p>
+              <p class="merch-desc">{t(`merch.items.${item.key}.desc`)}</p>
+            </div>
+            <span class="merch-price">{t('merch.comingSoon')}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

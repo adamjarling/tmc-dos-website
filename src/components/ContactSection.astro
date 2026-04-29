@@ -1,0 +1,42 @@
+---
+import { useTranslations, type Locale } from '../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+---
+
+<section id="contact" class="section alt-bg contact-section">
+  <div class="container">
+    <span class="mag-label">{t('contact.label')}</span>
+    <h2 class="mag-heading">{t('contact.heading')}</h2>
+    <div class="contact-inner">
+      <p class="contact-sub">{t('contact.sub')}</p>
+      <form class="email-form" id="mailing-form">
+        <input
+          type="email"
+          required
+          placeholder={t('contact.placeholder')}
+          class="email-input"
+          name="email"
+        />
+        <button type="submit" class="btn-filled" style="border:2px solid var(--pink)">
+          {t('contact.subscribe')}
+        </button>
+      </form>
+      <p class="confirm-msg" id="mailing-confirm" style="display:none;margin-top:24px">
+        {t('contact.confirm')}
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('mailing-form') as HTMLFormElement | null;
+  const confirm = document.getElementById('mailing-confirm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Mailing list backend not yet wired — placeholder confirmation only.
+    form.style.display = 'none';
+    if (confirm) confirm.style.display = 'block';
+  });
+</script>

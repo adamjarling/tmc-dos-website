@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import { useTranslations, type Locale } from '../i18n/ui';
+import { localePath } from '../lib/i18n-paths';
+import { getSpain2026, getUpcomingUS, type Show } from '../lib/shows';
+import spainPoster from '../assets/posters/tmc-spain-2026-all-dates-v2.png';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const spain = getSpain2026();
+const us = getUpcomingUS();
+
+const dateFormatter = new Intl.DateTimeFormat(locale === 'es' ? 'es-ES' : 'en-US', {
+  month: 'short',
+  day: 'numeric',
+});
+const longDateFormatter = new Intl.DateTimeFormat(locale === 'es' ? 'es-ES' : 'en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+
+function shortDate(s: Show) {
+  return dateFormatter.format(new Date(s.datetime));
+}
+function longDate(s: Show) {
+  return longDateFormatter.format(new Date(s.datetime));
+}
+---
+
+<section id="tour" class="section">
+  <div class="container">
+    <span class="mag-label">{t('tour.label')}</span>
+    <h2 class="mag-heading">{t('tour.heading')}</h2>
+
+    {spain.length > 0 && (
+      <div class="spain-spread">
+        <div class="spain-flyer">
+          <Image src={spainPoster} alt="Spain & Portugal Tour 2026" widths={[280, 560]} />
+        </div>
+        <div>
+          <p class="spain-label" set:html={t('tour.spainLabel')}></p>
+          <h3 class="spain-h">{t('tour.spainHeading')}</h3>
+          {spain.map((s) => (
+            <div class="spain-row">
+              <span class="spain-d">{shortDate(s)}</span>
+              <span class="spain-v">{s.venue.name}</span>
+              <span class="spain-c">{s.venue.city}, {s.venue.country}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {us.length > 0 && (
+      <>
+        <p class="us-subhead">{t('tour.usSubhead')}</p>
+        {us.map((s) => (
+          <div class="tour-row">
+            <span class="tour-date">{longDate(s)}</span>
+            <span class="tour-venue">{s.venue.name}</span>
+            <span class="tour-city">
+              {s.venue.city}, {s.venue.stateProvince}
+              {s.notes ? <em> · {s.notes}</em> : null}
+            </span>
+            {s.url.ticket
+              ? <a href={s.url.ticket} target="_blank" rel="noopener" class="btn-outline btn-sm">{t('tour.tickets')}</a>
+              : <span></span>}
+          </div>
+        ))}
+      </>
+    )}
+
+    {spain.length === 0 && us.length === 0 && (
+      <p style="color:var(--muted)">{t('tour.noUpcoming')}</p>
+    )}
+
+    <div class="tour-past-link">
+      <a href={localePath(locale, 'past-shows')} class="btn-outline">{t('tour.viewPast')}</a>
+    </div>
+  </div>
+</section>

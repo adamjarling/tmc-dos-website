@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GallerySection from '../components/GallerySection.astro';
+import { useTranslations } from '../i18n/ui';
+const t = useTranslations(Astro.currentLocale);
+---
+
+<Layout title={t('gallery.heading')}>
+  <div style="height:64px"></div>
+  <GallerySection />
+</Layout>

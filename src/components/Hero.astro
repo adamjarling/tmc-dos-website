@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import { useTranslations, type Locale } from '../i18n/ui';
+import { socials } from '../data/socials';
+import dosCover from '../assets/album-art/dos-album-cover.jpeg';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+---
+
+<section id="hero" class="hero">
+  <div class="gel-bg" style="background-image:url('/wallpaper-2.png');opacity:0.10;background-position:center bottom;"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-meta">{t('hero.meta')}</p>
+      <h1 class="hero-band">THE<br />MIDNIGHT<br />CALLS</h1>
+      <p class="hero-album">DOS</p>
+      <p class="hero-sub">{t('hero.tagline')}</p>
+      <div class="hero-cta">
+        <a href={socials.bandcamp} target="_blank" rel="noopener" class="btn-filled">{t('hero.orderNow')}</a>
+        <a href="#music" class="btn-outline">{t('hero.moreInfo')}</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <a href={socials.bandcamp} target="_blank" rel="noopener">
+        <Image src={dosCover} alt="DOS — The Midnight Calls" class="album-cover" widths={[320, 520, 1040]} />
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>{t('hero.scroll')}</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>

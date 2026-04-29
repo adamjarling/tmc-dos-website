@@ -1,0 +1,27 @@
+---
+import { useTranslations, pickLocale, type Locale } from '../i18n/ui';
+import { pressQuotes } from '../data/press';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+---
+
+<section id="press" class="section">
+  <div class="container">
+    <span class="mag-label">{t('press.label')}</span>
+    <h2 class="mag-heading">{t('press.heading')}</h2>
+    <div class="press-grid">
+      {pressQuotes.map((q) => (
+        <div class="press-q">
+          <p class="press-text">"{pickLocale(q.text, locale)}"</p>
+          <p class="press-src">— {q.source}</p>
+        </div>
+      ))}
+    </div>
+    <p style="color:var(--muted);margin-bottom:20px;font-size:15px">{t('press.intro')}</p>
+    <div class="epk-row">
+      <a href="mailto:press@themidnightcalls.com" class="btn-outline">{t('press.contact')}</a>
+      <a href="#" class="btn-filled">{t('press.epk')}</a>
+    </div>
+  </div>
+</section>

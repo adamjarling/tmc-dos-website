@@ -1,0 +1,96 @@
+{
+  "site": {
+    "tagline": "Blues-soaked rock and roll from Chicago",
+    "description": "Chicago blues-rock band The Midnight Calls — new album DOS out spring 2026. Tour dates, music, and merch."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "music": "Music",
+    "tour": "Tour",
+    "gallery": "Gallery",
+    "videos": "Videos",
+    "merch": "Merch",
+    "press": "Press",
+    "contact": "Contact"
+  },
+  "hero": {
+    "meta": "Chicago, IL · Est. 2022 · Vol. I · Issue II",
+    "tagline": "Blues-soaked rock and roll with guitars turned up to 11 — out now on Bandcamp and at shows.",
+    "orderNow": "Order Now",
+    "moreInfo": "More Info",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "The Band",
+    "heading": "About",
+    "pullQuote": "Recognizable flavors of American Blues Rock served with the elegance and expertise of seasoned musicians.",
+    "pullSource": "— The Midnight Calls",
+    "p1": "The Midnight Calls are a band from Chicago that plays classic-style Rock and Roll with 70s and southern rock touches. Although they are an American group, they have a singer from Spain, Taran de Pablos, who emigrated to the Windy City more than two decades ago. Alongside him are guitarists Adam Arling (The Last Vegas, Urge Overkill, Warrior Soul) and Jake Pallisard (Donnie Vie), bassist Sean Barnes, and drummer Chuck Harling.",
+    "p2": "Their music is strongly influenced by the Blues and by bands like Aerosmith, The Rolling Stones, and AC/DC. With catchy melodies and guitars turned up to 11 as the main ingredients, The Midnight Calls' musical recipe doesn't try to surprise us but instead brings us those recognizable flavors of American Blues Rock served with the elegance and expertise expected of seasoned musicians who have spent half their lives on the road on stages in America and Europe.",
+    "p3": "Since their formation in 2022, the band has been playing regularly, sharing the stage with bands like Living Colour, LA Guns, Jackyl, The Pat Travers Band, Enuff Z'Nuff, Sponge, Supersuckers, The Steepwater Band, Faster Pussycat, Blacktop Mojo, Cody Parks and The Dirty South and John Corabi among others.",
+    "p4": "The Midnight Calls have already released five singles: \"Whaddya,\" \"Coming Up Roses,\" \"So Cold,\" \"Since I've Been Thinking\" and their latest track, \"Objectophilia\" — the lead single off their upcoming album <em>DOS</em> to be released in spring 2026. The new album has been mixed and mastered by Mike Hagler (Wilco, The Tossers, Waco Brothers) at Kingsize Sound Labs in Chicago."
+  },
+  "music": {
+    "label": "New Album · 2026",
+    "heading": "Music",
+    "albumLabel": "The Midnight Calls",
+    "albumSub": "Spring 2026 · Kingsize Sound Labs, Chicago<br />Mixed &amp; mastered by Mike Hagler",
+    "albumBody": "<em>DOS</em> is available exclusively on Bandcamp and at shows. The full album can only be heard by ordering — individual tracks are being released to streaming one by one. Don't wait for the algorithm. Get the whole record.",
+    "orderCta": "Order DOS on Bandcamp",
+    "streamNote": "Singles available on streaming:",
+    "singlesLabel": "Singles"
+  },
+  "tour": {
+    "label": "Live Shows",
+    "heading": "Tour Dates",
+    "spainLabel": "España &amp; Portugal · May–June 2026",
+    "spainHeading": "European Tour",
+    "usSubhead": "US Dates",
+    "tickets": "Tickets",
+    "viewPast": "View All Past Shows →",
+    "noUpcoming": "No upcoming dates announced yet — check back soon."
+  },
+  "gallery": {
+    "label": "Live Photography",
+    "heading": "Gallery"
+  },
+  "videos": {
+    "label": "Watch",
+    "heading": "Videos"
+  },
+  "merch": {
+    "label": "Store",
+    "heading": "Merch",
+    "comingSoon": "Coming Soon",
+    "items": {
+      "vinyl": { "name": "DOS Vinyl LP", "desc": "Limited pressing" },
+      "tee": { "name": "Tour Tee", "desc": "Black, sizes S–XXL" },
+      "cap": { "name": "Logo Cap", "desc": "Structured snapback" }
+    }
+  },
+  "press": {
+    "label": "Media",
+    "heading": "Press",
+    "intro": "For press inquiries, interviews, or EPK requests:",
+    "contact": "Contact Press",
+    "epk": "Download EPK"
+  },
+  "contact": {
+    "label": "Stay in Touch",
+    "heading": "Mailing List",
+    "sub": "New releases, tour dates, and exclusive content — straight to your inbox. No algorithm required.",
+    "placeholder": "your@email.com",
+    "subscribe": "Subscribe",
+    "confirm": "You're in. Rock on."
+  },
+  "pastShows": {
+    "label": "Archive",
+    "heading": "Past Shows",
+    "back": "← Back to upcoming"
+  },
+  "footer": {
+    "copy": "© {{year}} The Midnight Calls. All rights reserved.",
+    "language": "Language"
+  }
+}

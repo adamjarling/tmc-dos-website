@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import { useTranslations, pickLocale, type Locale } from '../i18n/ui';
+import { livePhotos } from '../data/photos';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const photoModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/photos/*.{jpg,jpeg,png}',
+  { eager: true },
+);
+const photoByName = Object.fromEntries(
+  Object.entries(photoModules).map(([path, mod]) => [path.split('/').pop()!, mod.default]),
+);
+---
+
+<section id="gallery" class="section alt-bg">
+  <div class="container">
+    <span class="mag-label">{t('gallery.label')}</span>
+    <h2 class="mag-heading">{t('gallery.heading')}</h2>
+    <div class="photo-grid">
+      {livePhotos.map((p) => {
+        const img = photoByName[p.file];
+        if (!img) return null;
+        return (
+          <div class="photo-item">
+            <Image src={img} alt={pickLocale(p.alt, locale) ?? ''} widths={[600, 1200]} loading="lazy" />
+            <div class="photo-caption">{pickLocale(p.alt, locale)}</div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

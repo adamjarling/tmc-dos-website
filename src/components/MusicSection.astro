@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets';
+import { useTranslations, type Locale } from '../i18n/ui';
+import { singles } from '../data/singles';
+import { tracks } from '../data/tracks';
+import { streamLinks, socials } from '../data/socials';
+import dosCover from '../assets/album-art/dos-album-cover.jpeg';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const coverModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/covers/*.{jpg,jpeg,png}',
+  { eager: true },
+);
+const coverByName = Object.fromEntries(
+  Object.entries(coverModules).map(([path, mod]) => {
+    const name = path.split('/').pop()!;
+    return [name, mod.default];
+  }),
+);
+---
+
+<section id="music" class="section alt-bg">
+  <div class="container">
+    <span class="mag-label">{t('music.label')}</span>
+    <h2 class="mag-heading">{t('music.heading')}</h2>
+
+    <div class="album-feature">
+      <div class="album-feature-art">
+        <a href={socials.bandcamp} target="_blank" rel="noopener">
+          <Image src={dosCover} alt="DOS — The Midnight Calls" class="album-feature-img" widths={[320, 520, 1040]} />
+        </a>
+      </div>
+      <div class="album-feature-text">
+        <span class="mag-label">{t('music.albumLabel')}</span>
+        <h3 class="album-feature-title">DOS</h3>
+        <p class="album-feature-sub" set:html={t('music.albumSub')}></p>
+        <p class="album-feature-body" set:html={t('music.albumBody')}></p>
+        <div class="album-feature-cta">
+          <a href={socials.bandcamp} target="_blank" rel="noopener" class="btn-filled" style="font-size:14px;padding:14px 36px;">
+            {t('music.orderCta')}
+          </a>
+        </div>
+        <div class="album-feature-stream">
+          <p class="stream-note">{t('music.streamNote')}</p>
+          <div class="stream-row">
+            {streamLinks.map((s) => (
+              <a href={s.url} target={s.url !== '#' ? '_blank' : undefined} rel="noopener" class="stream-chip">
+                {s.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Track listing -->
+        <div class="tracklist">
+          <p class="stream-note" style="margin-top:32px;margin-bottom:12px">Track Listing</p>
+          {tracks.map((track, i) => (
+            <div class="track-row" style={track.available ? '' : 'opacity:0.35'}>
+              <span class="track-num">{String(i + 1).padStart(2, '0')}</span>
+              <span class="track-name">{track.title.toUpperCase()}</span>
+              {track.available && track.youtubeId && (
+                <a href={`https://www.youtube.com/watch?v=${track.youtubeId}`}
+                   target="_blank" rel="noopener" class="stream-chip" style="font-size:10px;padding:5px 10px;">
+                  Stream
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Singles -->
+    <div style="margin-top:72px">
+      <span class="mag-label">{t('music.singlesLabel')}</span>
+      <div class="singles-strip" style="margin-top:16px">
+        {singles.map((s) => {
+          const cover = s.cover ? coverByName[s.cover] : undefined;
+          const href = s.youtubeId ? `https://www.youtube.com/watch?v=${s.youtubeId}` : undefined;
+          const card = (
+            <div class="single-card">
+              <div class="single-art">
+                {cover
+                  ? <Image src={cover} alt={s.title} widths={[200, 400]} />
+                  : <div class="single-placeholder"><span>{s.title.toUpperCase()}</span></div>}
+              </div>
+              <p class="single-title">{s.title}</p>
+              <p class="single-year">{s.year}</p>
+            </div>
+          );
+          return href
+            ? <a href={href} target="_blank" rel="noopener" class="single-card-link">{card}</a>
+            : card;
+        })}
+      </div>
+    </div>
+  </div>
+</section>

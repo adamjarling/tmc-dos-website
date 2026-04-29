@@ -1,0 +1,96 @@
+{
+  "site": {
+    "tagline": "Rocanrol con sabor a blues desde Chicago",
+    "description": "Banda de blues-rock de Chicago, The Midnight Calls — nuevo álbum DOS, primavera de 2026. Fechas de gira, música y merchandising."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Banda",
+    "music": "Música",
+    "tour": "Gira",
+    "gallery": "Fotos",
+    "videos": "Vídeos",
+    "merch": "Tienda",
+    "press": "Prensa",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "meta": "Chicago, IL · Desde 2022 · Vol. I · Núm. II",
+    "tagline": "Rocanrol con sabor a blues y guitarras al 11 — disponible ya en Bandcamp y en los conciertos.",
+    "orderNow": "Comprar Ya",
+    "moreInfo": "Saber Más",
+    "scroll": "Desliza"
+  },
+  "about": {
+    "label": "La Banda",
+    "heading": "Banda",
+    "pullQuote": "Sabores reconocibles del Blues Rock americano servidos con la elegancia y el buen hacer de músicos curtidos en mil batallas.",
+    "pullSource": "— The Midnight Calls",
+    "p1": "The Midnight Calls son una banda de Chicago y hacen Rocanrol de estilo clásico con toques setenteros y sureños. Aún siendo un grupo americano, cuentan en sus filas con el cantante segoviano, Taran de Pablos, que emigró a la ciudad del viento hace ya más de dos décadas. A su lado se encuentran los guitarristas Adam Arling (The Last Vegas, Urge Overkill, Warrior Soul) y Jake Pallisard (Donnie Vie), el bajista Sean Barnes y el batería Chuck Harling.",
+    "p2": "Su música está fuertemente influenciada por el Blues y por bandas como Aerosmith, The Rolling Stones o AC/DC. Con melodías pegadizas y guitarras al 10 como principales ingredientes, la receta musical de The Midnight Calls no trata de sorprendernos sino que nos trae esos sabores reconocibles del Blues Rock americano servidos con la elegancia y el buen hacer que se espera de músicos curtidos en mil batallas que llevan media vida haciendo carretera en escenarios de América y Europa.",
+    "p3": "Desde su creación en 2022, la banda ha estado tocando regularmente, compartiendo escenario con bandas como Living Colour, LA Guns, Jackyl, The Pat Travers Band, Enuff Z'Nuff, Sponge, Supersuckers, The Steepwater Band, Faster Pussycat, Blacktop Mojo, Cody Parks and The Dirty South y John Corabi entre otras.",
+    "p4": "The Midnight Calls han lanzado ya cinco sencillos: \"Whaddya\", \"Coming Up Roses\", \"So Cold\", \"Since I've Been Thinking\" y su último tema, \"Objectophilia\", que sirve como adelanto a lo que será su nuevo álbum titulado <em>DOS</em>, que saldrá en la primavera de 2026. El álbum ha sido mezclado y masterizado por Mike Hagler (Wilco, The Tossers, Waco Brothers) en los estudios Kingsize Sound Labs de Chicago."
+  },
+  "music": {
+    "label": "Nuevo Álbum · 2026",
+    "heading": "Música",
+    "albumLabel": "The Midnight Calls",
+    "albumSub": "Primavera 2026 · Kingsize Sound Labs, Chicago<br />Mezclado y masterizado por Mike Hagler",
+    "albumBody": "<em>DOS</em> está disponible exclusivamente en Bandcamp y en los conciertos. El álbum completo solo se puede escuchar al pedirlo — los temas se van publicando en streaming uno a uno. No esperes al algoritmo. Hazte con el disco entero.",
+    "orderCta": "Comprar DOS en Bandcamp",
+    "streamNote": "Singles disponibles en streaming:",
+    "singlesLabel": "Sencillos"
+  },
+  "tour": {
+    "label": "Conciertos",
+    "heading": "Fechas de Gira",
+    "spainLabel": "España y Portugal · Mayo–Junio 2026",
+    "spainHeading": "Gira Europea",
+    "usSubhead": "Fechas en EE. UU.",
+    "tickets": "Entradas",
+    "viewPast": "Ver Todos los Conciertos Pasados →",
+    "noUpcoming": "Aún no hay fechas anunciadas — vuelve pronto."
+  },
+  "gallery": {
+    "label": "Fotos en Directo",
+    "heading": "Galería"
+  },
+  "videos": {
+    "label": "Mira",
+    "heading": "Vídeos"
+  },
+  "merch": {
+    "label": "Tienda",
+    "heading": "Merchandising",
+    "comingSoon": "Próximamente",
+    "items": {
+      "vinyl": { "name": "DOS Vinilo LP", "desc": "Edición limitada" },
+      "tee": { "name": "Camiseta de Gira", "desc": "Negra, tallas S–XXL" },
+      "cap": { "name": "Gorra Logo", "desc": "Snapback estructurada" }
+    }
+  },
+  "press": {
+    "label": "Medios",
+    "heading": "Prensa",
+    "intro": "Para entrevistas, prensa o solicitudes de EPK:",
+    "contact": "Contacto Prensa",
+    "epk": "Descargar EPK"
+  },
+  "contact": {
+    "label": "Mantente al Día",
+    "heading": "Lista de Correo",
+    "sub": "Nuevos lanzamientos, fechas de gira y contenido exclusivo — directo a tu bandeja de entrada. Sin algoritmos.",
+    "placeholder": "tu@email.com",
+    "subscribe": "Suscribirme",
+    "confirm": "Listo. ¡A rocanrolear!"
+  },
+  "pastShows": {
+    "label": "Archivo",
+    "heading": "Conciertos Pasados",
+    "back": "← Volver a próximos"
+  },
+  "footer": {
+    "copy": "© {{year}} The Midnight Calls. Todos los derechos reservados.",
+    "language": "Idioma"
+  }
+}

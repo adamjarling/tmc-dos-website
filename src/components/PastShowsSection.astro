@@ -1,0 +1,57 @@
+---
+import { useTranslations, type Locale } from '../i18n/ui';
+import { localePath } from '../lib/i18n-paths';
+import { getPastShows, type Show } from '../lib/shows';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const past = getPastShows();
+
+// Group by year for an archive feel.
+const byYear = new Map<number, Show[]>();
+for (const s of past) {
+  const y = new Date(s.datetime).getFullYear();
+  const list = byYear.get(y) ?? [];
+  list.push(s);
+  byYear.set(y, list);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+
+const longDateFormatter = new Intl.DateTimeFormat(locale === 'es' ? 'es-ES' : 'en-US', {
+  month: 'short',
+  day: 'numeric',
+});
+function shortDate(s: Show) {
+  return longDateFormatter.format(new Date(s.datetime));
+}
+---
+
+<section class="section">
+  <div class="container">
+    <span class="mag-label">{t('pastShows.label')}</span>
+    <h2 class="mag-heading">{t('pastShows.heading')}</h2>
+    <hr class="rule-thin section-rule" />
+
+    {years.map((year) => (
+      <div style="margin-bottom:48px">
+        <p class="us-subhead" style="color:var(--pink)">{year}</p>
+        {byYear.get(year)!.map((s) => (
+          <div class="tour-row">
+            <span class="tour-date">{shortDate(s)}</span>
+            <span class="tour-venue">{s.venue.name}</span>
+            <span class="tour-city">
+              {s.venue.city}, {s.venue.country === 'USA' ? s.venue.stateProvince : s.venue.country}
+              {s.notes ? <em> · {s.notes}</em> : null}
+            </span>
+            <span></span>
+          </div>
+        ))}
+      </div>
+    ))}
+
+    <div class="tour-past-link">
+      <a href={localePath(locale, 'tour')} class="btn-outline">{t('pastShows.back')}</a>
+    </div>
+  </div>
+</section>

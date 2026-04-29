@@ -1,0 +1,27 @@
+---
+import { useTranslations, type Locale } from '../i18n/ui';
+import { footerSocials } from '../data/socials';
+import logo from '../assets/logos/tmc-logo-2026-white.png';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src={logo.src} alt="The Midnight Calls" />
+      </div>
+      <p class="footer-copy">{t('footer.copy', { year })}</p>
+    </div>
+    <div class="footer-socials">
+      {footerSocials.map((s) => (
+        <a href={s.url} target="_blank" rel="noopener" class="footer-social">
+          {s.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>

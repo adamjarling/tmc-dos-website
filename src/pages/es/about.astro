@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import { useTranslations } from '../../i18n/ui';
+const t = useTranslations(Astro.currentLocale);
+---
+
+<Layout title={t('about.heading')}>
+  <div style="height:64px"></div>
+  <AboutSection />
+</Layout>
