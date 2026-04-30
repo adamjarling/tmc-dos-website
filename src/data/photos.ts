@@ -7,6 +7,7 @@ export type LivePhoto = {
 };
 
 export const livePhotos: LivePhoto[] = [
+  { file: 'tmc-band-photo-2026-4.jpg',                                alt: { en: 'The Midnight Calls — band photo 2026', es: 'The Midnight Calls — foto de banda 2026' } },
   { file: '_U7A2964.jpg',                                           alt: { en: 'Sean Barnes — bass',         es: 'Sean Barnes — bajo' } },
   { file: '505318457_775036008193220_1042307814692525926_n.jpg',    alt: { en: 'Taran de Pablos — live',     es: 'Taran de Pablos — en directo' } },
   { file: '_U7A3096.jpg',                                           alt: { en: 'Chuck Harling — drums',      es: 'Chuck Harling — batería' } },
