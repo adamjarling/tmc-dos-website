@@ -1,7 +1,18 @@
 {
   "site": {
     "tagline": "Blues-soaked rock and roll from Chicago",
-    "description": "Chicago blues-rock band The Midnight Calls — new album DOS out spring 2026. Tour dates, music, and merch."
+    "description": "Chicago blues-rock band The Midnight Calls — new album DOS out spring 2026. Tour dates, music, and merch.",
+    "seo": {
+      "about": "Meet The Midnight Calls — a Chicago blues-rock band featuring Taran de Pablos, Adam Arling, Jake Pallisard, Sean Barnes, and Chuck Harling. Classic rock with a southern touch, formed in 2022.",
+      "music": "Stream and order DOS, the debut album from The Midnight Calls. Mixed and mastered by Mike Hagler at Kingsize Sound Labs, Chicago. Available exclusively on Bandcamp.",
+      "tour": "The Midnight Calls upcoming tour dates — live in Chicago and on their España & Portugal 2026 European tour. Tickets and info.",
+      "gallery": "Live photos of The Midnight Calls performing — a Chicago blues-rock band touring the US and Europe.",
+      "videos": "Watch music videos and live performance footage from The Midnight Calls, Chicago blues-rock band.",
+      "merch": "Official The Midnight Calls merchandise — vinyl LP, tour tees, and more. Available at shows and online.",
+      "press": "Press coverage, reviews, and media for The Midnight Calls. Download the EPK or contact for interview requests.",
+      "pastShows": "Complete live show history for The Midnight Calls — from Reggies in Chicago to stages across Spain and Europe.",
+      "contact": "Get in touch with The Midnight Calls. Join the mailing list for new releases, tour dates, and exclusive content."
+    }
   },
   "nav": {
     "home": "Home",

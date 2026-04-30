@@ -9,6 +9,28 @@ import dosCover from '../assets/album-art/dos-album-cover.jpeg';
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 
+const albumSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MusicAlbum',
+  name: 'DOS',
+  byArtist: {
+    '@type': 'MusicGroup',
+    name: 'The Midnight Calls',
+    url: 'https://themidnightcalls.com',
+  },
+  datePublished: '2026',
+  recordLabel: 'Kingsize Sound Labs',
+  image: 'https://themidnightcalls.com/og-image.jpeg',
+  url: socials.bandcamp,
+  numTracks: tracks.length,
+  track: tracks.map((track, i) => ({
+    '@type': 'MusicRecording',
+    name: track.title,
+    position: i + 1,
+    ...(track.youtubeId ? { url: `https://www.youtube.com/watch?v=${track.youtubeId}` } : {}),
+  })),
+};
+
 const coverModules = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/covers/*.{jpg,jpeg,png}',
   { eager: true },
@@ -20,6 +42,8 @@ const coverByName = Object.fromEntries(
   }),
 );
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(albumSchema)} />
 
 <section id="music" class="section alt-bg">
   <div class="container">

@@ -27,9 +27,9 @@ const otherPath = switchLocale(currentPath, otherLocale);
   <div class="overlay-dim"></div>
   <button class="overlay-close" id="nav-close" aria-label="Close menu">×</button>
   <nav class="overlay-nav">
-    {NAV_ROUTES.map(({ key, path }, i) => (
+    {NAV_ROUTES.map(({ key, anchor }, i) => (
       <a
-        href={localePath(locale, path)}
+        href={`${localePath(locale, '/')}#${anchor}`}
         class="overlay-link"
         style={`transition-delay: ${i * 0.05}s`}
       >{t(`nav.${key}`)}</a>

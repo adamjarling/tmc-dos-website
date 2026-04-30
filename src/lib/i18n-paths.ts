@@ -11,16 +11,16 @@ export function localePath(locale: string | undefined, path: string): string {
   return getRelativeLocaleUrl(locale ?? 'en', path);
 }
 
-/** All routes the nav links to, in display order. */
+/** Nav routes — all sections are hash anchors on the homepage. */
 export const NAV_ROUTES = [
-  { key: 'about',   path: 'about' },
-  { key: 'music',   path: 'music' },
-  { key: 'tour',    path: 'tour' },
-  { key: 'gallery', path: 'gallery' },
-  { key: 'videos',  path: 'videos' },
-  { key: 'merch',   path: 'merch' },
-  { key: 'press',   path: 'press' },
-  { key: 'contact', path: 'contact' },
+  { key: 'about',   anchor: 'about' },
+  { key: 'music',   anchor: 'music' },
+  { key: 'tour',    anchor: 'tour' },
+  { key: 'gallery', anchor: 'gallery' },
+  { key: 'videos',  anchor: 'videos' },
+  { key: 'merch',   anchor: 'merch' },
+  { key: 'press',   anchor: 'press' },
+  { key: 'contact', anchor: 'contact' },
 ] as const;
 
 /**

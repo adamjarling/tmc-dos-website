@@ -5,7 +5,7 @@ import { useTranslations } from '../../i18n/ui';
 const t = useTranslations(Astro.currentLocale);
 ---
 
-<Layout title={t('pastShows.heading')}>
+<Layout title={t('pastShows.heading')} description={t('site.seo.pastShows')}>
   <div style="height:64px"></div>
   <PastShowsSection />
 </Layout>

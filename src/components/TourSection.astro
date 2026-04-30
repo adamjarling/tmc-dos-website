@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import { useTranslations, type Locale } from '../i18n/ui';
 import { localePath } from '../lib/i18n-paths';
-import { getSpain2026, getUpcomingUS, type Show } from '../lib/shows';
+import { getSpain2026, getUpcomingShows, getUpcomingUS, type Show } from '../lib/shows';
 import spainPoster from '../assets/posters/tmc-spain-2026-all-dates-v2.png';
 
 const locale = (Astro.currentLocale ?? 'en') as Locale;
@@ -10,6 +10,36 @@ const t = useTranslations(locale);
 
 const spain = getSpain2026();
 const us = getUpcomingUS();
+
+const eventSchemas = getUpcomingShows().map((s) => ({
+  '@context': 'https://schema.org',
+  '@type': 'MusicEvent',
+  name: `The Midnight Calls${s.notes ? ` — ${s.notes}` : ''} at ${s.venue.name}`,
+  startDate: s.datetime,
+  location: {
+    '@type': 'Place',
+    name: s.venue.name,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: s.venue.city,
+      addressRegion: s.venue.stateProvince,
+      addressCountry: s.venue.country,
+    },
+    ...(s.venue.url?.website ? { url: s.venue.url.website } : {}),
+  },
+  performer: {
+    '@type': 'MusicGroup',
+    name: 'The Midnight Calls',
+    url: 'https://themidnightcalls.com',
+  },
+  ...(s.url.ticket ? {
+    offers: {
+      '@type': 'Offer',
+      url: s.url.ticket,
+      availability: 'https://schema.org/InStock',
+    },
+  } : {}),
+}));
 
 const dateFormatter = new Intl.DateTimeFormat(locale === 'es' ? 'es-ES' : 'en-US', {
   month: 'short',
@@ -28,6 +58,10 @@ function longDate(s: Show) {
   return longDateFormatter.format(new Date(s.datetime));
 }
 ---
+
+{eventSchemas.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}
 
 <section id="tour" class="section">
   <div class="container">

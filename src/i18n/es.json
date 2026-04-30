@@ -1,7 +1,18 @@
 {
   "site": {
     "tagline": "Rocanrol con sabor a blues desde Chicago",
-    "description": "Banda de blues-rock de Chicago, The Midnight Calls — nuevo álbum DOS, primavera de 2026. Fechas de gira, música y merchandising."
+    "description": "Banda de blues-rock de Chicago, The Midnight Calls — nuevo álbum DOS, primavera de 2026. Fechas de gira, música y merchandising.",
+    "seo": {
+      "about": "Conoce a The Midnight Calls — banda de blues-rock de Chicago con Taran de Pablos, Adam Arling, Jake Pallisard, Sean Barnes y Chuck Harling. Rock clásico con toques sureños, desde 2022.",
+      "music": "Escucha y compra DOS, el álbum debut de The Midnight Calls. Mezclado y masterizado por Mike Hagler en Kingsize Sound Labs, Chicago. Disponible exclusivamente en Bandcamp.",
+      "tour": "Próximas fechas de gira de The Midnight Calls — en Chicago y en la Gira España y Portugal 2026. Entradas e información.",
+      "gallery": "Fotos en directo de The Midnight Calls — banda de blues-rock de Chicago en gira por EE. UU. y Europa.",
+      "videos": "Videoclips y actuaciones en directo de The Midnight Calls, banda de blues-rock de Chicago.",
+      "merch": "Merchandising oficial de The Midnight Calls — vinilo LP, camisetas de gira y más. Disponible en conciertos y online.",
+      "press": "Cobertura de prensa, reseñas y medios de The Midnight Calls. Descarga el EPK o contacta para entrevistas.",
+      "pastShows": "Historial completo de conciertos de The Midnight Calls — desde Reggies en Chicago hasta escenarios por toda España y Europa.",
+      "contact": "Contacta con The Midnight Calls. Suscríbete a la lista de correo para nuevos lanzamientos, fechas de gira y contenido exclusivo."
+    }
   },
   "nav": {
     "home": "Inicio",
