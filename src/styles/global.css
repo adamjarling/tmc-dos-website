@@ -322,8 +322,39 @@ a { color: inherit; text-decoration: none; }
 .merch-price { color: var(--pink); font-family: var(--hf); font-size: 20px; }
 
 /* ── press ── */
+.press-featured {
+  display: grid; grid-template-columns: 380px 1fr;
+  gap: 60px; align-items: center;
+  padding: 48px; margin-bottom: 32px;
+  border: 1px solid rgba(232,24,106,0.2);
+  background: rgba(232,24,106,0.04);
+}
+.press-mags {
+  position: relative; height: 380px;
+}
+.p1-review {
+  position: absolute; width: 195px; height: auto;
+  left: 10px; top: 10px;
+  transform: rotate(-4deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  z-index: 2;
+}
+.p1-cover {
+  position: absolute; width: 185px; height: auto;
+  right: 10px; top: 50px;
+  transform: rotate(3.5deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  z-index: 1;
+}
+.press-featured-quote { display: flex; flex-direction: column; justify-content: center; }
+.press-featured-quote .press-text { font-size: clamp(17px, 1.6vw, 22px); line-height: 1.7; }
+
 .press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 52px; }
 .press-q { padding: 36px; border-left: 2px solid var(--pink); background: rgba(232, 24, 106, 0.04); }
+.press-q--cr .cr-logo {
+  width: 140px; height: auto; margin-bottom: 20px;
+  filter: invert(1); mix-blend-mode: screen;
+}
 .press-text { font-family: var(--tf); font-size: 16px; line-height: 1.75; margin-bottom: 14px; color: var(--text); }
 .press-src { color: var(--pink); font-family: var(--tf); font-size: 12px; letter-spacing: 2px; }
 .epk-row { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -371,6 +402,8 @@ a { color: inherit; text-decoration: none; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
   .video-grid { grid-template-columns: 1fr; }
   .merch-grid { grid-template-columns: repeat(2, 1fr); }
+  .press-featured { grid-template-columns: 1fr; }
+  .press-mags { height: 300px; }
   .press-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {

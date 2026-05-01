@@ -1,23 +1,47 @@
 ---
 import { useTranslations, pickLocale, type Locale } from '../i18n/ui';
 import { pressQuotes } from '../data/press';
+import { Image } from 'astro:assets';
+import classicRockLogo from '../assets/media/classic-rock-logo.png';
+import popular1Cover from '../assets/media/popular1-cover.jpg';
+import popular1Review from '../assets/media/popular1-review.jpg';
 
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
+
+const [crQuote, p1Quote, tmcQuote] = pressQuotes;
 ---
 
 <section id="press" class="section">
   <div class="container">
     <span class="mag-label">{t('press.label')}</span>
     <h2 class="mag-heading">{t('press.heading')}</h2>
-    <div class="press-grid">
-      {pressQuotes.map((q) => (
-        <div class="press-q">
-          <p class="press-text">"{pickLocale(q.text, locale)}"</p>
-          <p class="press-src">— {q.source}</p>
-        </div>
-      ))}
+
+    <!-- Popular 1 featured spread -->
+    <div class="press-featured">
+      <div class="press-mags">
+        <Image src={popular1Review} alt="Popular 1 review of The Midnight Calls" class="p1-review" />
+        <Image src={popular1Cover} alt="Popular 1 magazine cover" class="p1-cover" />
+      </div>
+      <div class="press-featured-quote">
+        <p class="press-text">"{pickLocale(p1Quote.text, locale)}"</p>
+        <p class="press-src">— {p1Quote.source}</p>
+      </div>
     </div>
+
+    <!-- Classic Rock + TMC -->
+    <div class="press-grid">
+      <div class="press-q press-q--cr">
+        <Image src={classicRockLogo} alt="Classic Rock Magazine" class="cr-logo" />
+        <p class="press-text">"{pickLocale(crQuote.text, locale)}"</p>
+        <p class="press-src">— {crQuote.source}</p>
+      </div>
+      <div class="press-q">
+        <p class="press-text">"{pickLocale(tmcQuote.text, locale)}"</p>
+        <p class="press-src">— {tmcQuote.source}</p>
+      </div>
+    </div>
+
     <p style="color:var(--muted);margin-bottom:20px;font-size:15px">{t('press.intro')}</p>
     <div class="epk-row">
       <a href="mailto:themidnightcallsofficial@gmail.com" class="btn-outline">{t('press.contact')}</a>
