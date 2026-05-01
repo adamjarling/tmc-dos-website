@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+# The Midnight Calls — Official Website
 
-```sh
-pnpm create astro@latest -- --template minimal
+The official site for **The Midnight Calls**, built with [Astro](https://astro.build) and deployed on Netlify.
+
+## Stack
+
+- **Framework:** Astro v6
+- **Deployment:** Netlify
+- **Package manager:** pnpm
+
+## Project Structure
+
+```
+src/
+├── assets/          # Images and static media
+├── components/      # Section and UI components
+│   ├── Hero.astro
+│   ├── AboutSection.astro
+│   ├── MusicSection.astro
+│   ├── TourSection.astro
+│   ├── GallerySection.astro
+│   ├── VideosSection.astro
+│   ├── PressSection.astro
+│   ├── MerchSection.astro
+│   ├── ContactSection.astro
+│   └── ...
+├── content/         # Content collections
+├── data/            # Structured site data
+├── i18n/            # Internationalization
+├── layouts/         # Page layouts
+├── lib/             # Utilities
+├── pages/           # Routes (index + past-shows)
+└── styles/          # Global styles
+public/              # Static assets (logo, OG image, posters)
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command        | Action                                      |
+| :------------- | :------------------------------------------ |
+| `pnpm install` | Install dependencies                        |
+| `pnpm dev`     | Start dev server at `localhost:4321`        |
+| `pnpm build`   | Build production site to `./dist/`          |
+| `pnpm preview` | Preview production build locally            |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Deployment
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Pushes to `main` deploy automatically to Netlify. Build config lives in [netlify.toml](netlify.toml).
