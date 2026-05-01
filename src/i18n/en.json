@@ -95,6 +95,12 @@
     "subscribe": "Subscribe",
     "confirm": "You're in. Rock on."
   },
+  "success": {
+    "heading": "You're In!",
+    "sub": "Check your inbox to confirm your subscription.",
+    "body": "Welcome to the list — you'll be the first to know about new releases, tour dates, and exclusive content.",
+    "back": "← Back to site"
+  },
   "pastShows": {
     "label": "Archive",
     "heading": "Past Shows",

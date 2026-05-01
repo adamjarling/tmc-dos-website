@@ -9,7 +9,7 @@ export const socials = {
   spotify:   'https://open.spotify.com/artist/6rcObgTuaf4s9uaOEK68D9?si=GBA_A_1nSDS_BwJEzAUEeg',
   youtube:   'https://www.youtube.com/@themidnightcalls',
   bandcamp:  'https://themidnightcalls.bandcamp.com/',
-  appleMusic: '#',
+  appleMusic: 'https://music.apple.com/de/artist/the-midnight-calls/1709903220',
 } as const;
 
 export const footerSocials: SocialLink[] = [

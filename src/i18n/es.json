@@ -95,6 +95,12 @@
     "subscribe": "Suscribirme",
     "confirm": "Listo. ¡A rocanrolear!"
   },
+  "success": {
+    "heading": "¡Ya Estás Dentro!",
+    "sub": "Revisa tu bandeja de entrada para confirmar tu suscripción.",
+    "body": "Bienvenido a la lista — serás el primero en enterarte de nuevos lanzamientos, fechas de gira y contenido exclusivo.",
+    "back": "← Volver al sitio"
+  },
   "pastShows": {
     "label": "Archivo",
     "heading": "Conciertos Pasados",
