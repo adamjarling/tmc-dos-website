@@ -17,9 +17,10 @@ const t = useTranslations(locale);
       <p class="hero-album">DOS</p>
       <p class="hero-sub">{t('hero.tagline')}</p>
       <div class="hero-cta">
-        <a href={socials.bandcamp} target="_blank" rel="noopener" class="btn-filled">{t('hero.orderNow')}</a>
+        <a aria-disabled="true" class="btn-filled" style="opacity:0.4;cursor:not-allowed;pointer-events:none;">{t('hero.orderNow')}</a>
         <a href="#music" class="btn-outline">{t('hero.moreInfo')}</a>
       </div>
+      <p style="font-size:11px;opacity:0.5;margin-top:8px;letter-spacing:0.06em;text-transform:uppercase;">{t('hero.orderComingSoon')}</p>
     </div>
     <div class="hero-art">
       <a href={socials.bandcamp} target="_blank" rel="noopener">

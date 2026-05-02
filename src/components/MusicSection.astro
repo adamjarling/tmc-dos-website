@@ -62,9 +62,10 @@ const coverByName = Object.fromEntries(
         <p class="album-feature-sub" set:html={t('music.albumSub')}></p>
         <p class="album-feature-body" set:html={t('music.albumBody')}></p>
         <div class="album-feature-cta">
-          <a href={socials.bandcamp} target="_blank" rel="noopener" class="btn-filled" style="font-size:14px;padding:14px 36px;">
+          <a aria-disabled="true" class="btn-filled" style="font-size:14px;padding:14px 36px;opacity:0.4;cursor:not-allowed;pointer-events:none;">
             {t('music.orderCta')}
           </a>
+          <p style="font-size:11px;opacity:0.5;margin-top:8px;letter-spacing:0.06em;text-transform:uppercase;">{t('music.orderComingSoon')}</p>
         </div>
         <div class="album-feature-stream">
           <p class="stream-note">{t('music.streamNote')}</p>
