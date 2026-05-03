@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PressPageContent from '../../components/PressPageContent.astro';
+import { useTranslations } from '../../i18n/ui';
+const t = useTranslations('es');
+---
+
+<Layout
+  title="Prensa"
+  description={t('site.seo.press')}
+>
+  <div style="height:64px"></div>
+  <PressPageContent />
+</Layout>

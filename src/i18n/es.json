@@ -108,6 +108,26 @@
     "heading": "Conciertos Pasados",
     "back": "← Volver a próximos"
   },
+  "pressPage": {
+    "heroHook": "The Midnight Calls regresan con DOS — diez temas de rock and roll empapado de blues, mezclado por Mike Hagler en Kingsize Sound Labs, Chicago.",
+    "streamCta": "Escuchar el álbum",
+    "epkCta": "Descargar EPK",
+    "bioHeading": "La Banda",
+    "bioLink": "Biografía completa (ES)",
+    "musicHeading": "Música",
+    "musicNote": "Álbum completo disponible exclusivamente en Bandcamp y en conciertos. Singles individuales publicados mensualmente en plataformas de streaming.",
+    "quotesHeading": "En la Prensa",
+    "p1Translation": "Son de esas bandas que, después de verlas y escucharlas, te hacen pensar en ese momento que son los mejores del mundo.",
+    "photosHeading": "Fotos de Prensa",
+    "photosLabel": "Descargar fotos de prensa en alta resolución",
+    "photoDownload": "Descargar",
+    "tourHeading": "Fechas en Directo",
+    "usLabel": "Previos en EE. UU.",
+    "spainLabel": "España y Portugal · 28 Mayo – 7 Junio 2026",
+    "contactHeading": "Contacto de Prensa",
+    "contactIntro": "Para entrevistas, reseñas, consideración en playlists o escuchas anticipadas — contáctanos.",
+    "statsHeading": "En Números"
+  },
   "footer": {
     "copy": "© {{year}} The Midnight Calls. Todos los derechos reservados.",
     "language": "Idioma"

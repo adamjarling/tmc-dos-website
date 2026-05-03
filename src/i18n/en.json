@@ -108,6 +108,26 @@
     "heading": "Past Shows",
     "back": "← Back to upcoming"
   },
+  "pressPage": {
+    "heroHook": "The Midnight Calls return with DOS — ten tracks of blues-soaked rock and roll, mixed by Mike Hagler at Kingsize Sound Labs, Chicago.",
+    "streamCta": "Stream the album",
+    "epkCta": "Download EPK",
+    "bioHeading": "About the Band",
+    "bioLink": "Full biography (EN)",
+    "musicHeading": "Music",
+    "musicNote": "Full album available exclusively on Bandcamp and at shows. Individual singles released to streaming monthly.",
+    "quotesHeading": "In the Press",
+    "p1Translation": "They are one of those bands that, after seeing and hearing them, makes you think in that moment they are the best in the world.",
+    "photosHeading": "Press Photos",
+    "photosLabel": "Download high-res press photos",
+    "photoDownload": "Download",
+    "tourHeading": "Live Dates",
+    "usLabel": "US Pre-Tour Shows",
+    "spainLabel": "España & Portugal · May 28 – June 7, 2026",
+    "contactHeading": "Press Contact",
+    "contactIntro": "For interviews, reviews, playlist consideration, or advance streams — get in touch.",
+    "statsHeading": "By the Numbers"
+  },
   "footer": {
     "copy": "© {{year}} The Midnight Calls. All rights reserved.",
     "language": "Language"

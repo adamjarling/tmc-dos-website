@@ -1,0 +1,572 @@
+---
+import { Image } from 'astro:assets';
+import { useTranslations, type Locale } from '../i18n/ui';
+import { socials } from '../data/socials';
+import dosAlbumCover from '../assets/album-art/dos-album-cover.jpeg';
+import classicRockLogo from '../assets/media/classic-rock-logo.png';
+import popular1Review from '../assets/media/popular1-review.jpg';
+import popular1Cover from '../assets/media/popular1-cover.jpg';
+import bandPhoto from '../assets/photos/tmc-band-photo-2026-4.jpg';
+import taranPhoto from '../assets/photos/505318457_775036008193220_1042307814692525926_n.jpg';
+import adamPhoto from '../assets/photos/505117059_775036738193147_3844990692697810430_n.jpg';
+import jakePhoto from '../assets/photos/_U7A3045.jpg';
+import seanPhoto from '../assets/photos/_U7A2964.jpg';
+import chuckPhoto from '../assets/photos/_U7A3096.jpg';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+const isES = locale === 'es';
+
+const bioParagraph = isES
+  ? `The Midnight Calls es una banda de rock and roll de Chicago, Illinois. Formada en 2022, la banda está liderada por el cantante segoviano Taran de Pablos junto a los guitarristas Adam Arling (The Last Vegas, Urge Overkill, Warrior Soul) y Jake Pallisard (Donnie Vie), el bajista Sean Barnes y el batería Chuck Harling. Su segundo álbum, <em>DOS</em>, fue mezclado y masterizado por Mike Hagler (Wilco, The Tossers, Waco Brothers) en Kingsize Sound Labs, Chicago. Influenciados por el rock duro de los 70, el blues sureño y las guitarras a tope, The Midnight Calls han recibido el reconocimiento de Classic Rock Magazine (Reino Unido) y Popular 1 (España), y actualmente están de gira por España y Portugal presentando el disco.`
+  : `The Midnight Calls are a blues-soaked rock and roll band from Chicago, Illinois. Formed in 2022, the band is fronted by Spain-born singer Taran de Pablos alongside guitarists Adam Arling (The Last Vegas, Urge Overkill, Warrior Soul) and Jake Pallisard (Donnie Vie), bassist Sean Barnes, and drummer Chuck Harling. Their second album, <em>DOS</em>, was mixed and mastered by Mike Hagler (Wilco, The Tossers, Waco Brothers) at Kingsize Sound Labs in Chicago. Driven by 70s hard rock, southern blues, and guitars turned up to 11, The Midnight Calls have earned praise from Classic Rock Magazine (UK) and Popular 1 (Spain), and are currently touring Spain and Portugal in support of the record.`;
+
+const bioLink = isES
+  ? { href: '/es/press/bio-es', label: 'Biografía completa (ES)' }
+  : { href: '/press/bio-en', label: 'Full biography (EN)' };
+
+const usDates = [
+  { date: isES ? '13 May 2026' : 'May 13, 2026', venue: 'The Vixen',   city: 'McHenry, IL',    notes: isES ? 'con John Corabi and Friends' : 'with John Corabi and Friends' },
+  { date: isES ? '16 May 2026' : 'May 16, 2026', venue: "Tony D's",    city: 'Elmwood Park, IL', notes: isES ? 'con Cuttlass' : 'with Cuttlass' },
+];
+
+const spainDates = [
+  { date: isES ? '28 May' : 'May 28', venue: 'La Cueva del Jazz',        city: 'Zamora, Spain' },
+  { date: isES ? '29 May' : 'May 29', venue: 'Sala Jagger',              city: 'Lugo, Spain' },
+  { date: isES ? '30 May' : 'May 30', venue: 'O Bar Queiro',             city: 'Porto Do Barqueiro, Spain' },
+  { date: isES ? '31 May' : 'May 31', venue: 'Casa Cultura',             city: 'Vegadeo, Spain' },
+  { date: isES ? '2 Jun'  : 'Jun 2',  venue: 'Wurlitzer Ballroom',       city: 'Madrid, Spain' },
+  { date: isES ? '3 Jun'  : 'Jun 3',  venue: 'El Comercio de Las Arenas',city: 'Getxo, Spain' },
+  { date: isES ? '4 Jun'  : 'Jun 4',  venue: 'Los Picos',                city: 'Liérganes, Spain' },
+  { date: isES ? '5 Jun'  : 'Jun 5',  venue: 'Sala Mardi Gras',          city: 'A Coruña, Spain' },
+  { date: isES ? '6 Jun'  : 'Jun 6',  venue: 'GRC Amigos de Seixas',     city: 'Seixas, Portugal' },
+  { date: isES ? '7 Jun'  : 'Jun 7',  venue: 'Porta Caeli',              city: 'Valladolid, Spain' },
+];
+
+const pressPhotos = [
+  { file: '/press-photos/tmc-band-photo-2026.jpg',       src: bandPhoto,  label: isES ? 'Foto de banda 2026'           : 'Band photo 2026',         alt: isES ? 'The Midnight Calls — foto de banda 2026' : 'The Midnight Calls — band photo 2026' },
+  { file: '/press-photos/tmc-taran-de-pablos-live.jpg',  src: taranPhoto, label: isES ? 'En directo — Taran de Pablos' : 'Live — Taran de Pablos',  alt: isES ? 'Taran de Pablos en directo'              : 'Taran de Pablos performing live' },
+  { file: '/press-photos/tmc-adam-arling-guitar.jpg',    src: adamPhoto,  label: isES ? 'En directo — Adam Arling'     : 'Live — Adam Arling',      alt: isES ? 'Adam Arling a la guitarra'               : 'Adam Arling on guitar' },
+  { file: '/press-photos/tmc-jake-pallisard-guitar.jpg', src: jakePhoto,  label: isES ? 'En directo — Jake Pallisard'  : 'Live — Jake Pallisard',   alt: isES ? 'Jake Pallisard a la guitarra'            : 'Jake Pallisard on guitar' },
+  { file: '/press-photos/tmc-sean-barnes-bass.jpg',      src: seanPhoto,  label: isES ? 'En directo — Sean Barnes'     : 'Live — Sean Barnes',      alt: isES ? 'Sean Barnes al bajo'                     : 'Sean Barnes on bass' },
+  { file: '/press-photos/tmc-chuck-harling-drums.jpg',   src: chuckPhoto, label: isES ? 'En directo — Chuck Harling'   : 'Live — Chuck Harling',    alt: isES ? 'Chuck Harling a la batería'               : 'Chuck Harling on drums' },
+];
+
+const stats = [
+  { label: isES ? 'Vistas en YouTube'    : 'YouTube views',      value: isES ? '57.000+ en 5 vídeos' : '57,000+ across 5 videos' },
+  { label: isES ? 'Media por vídeo'      : 'Views per video',    value: isES ? '~13.000 de media'    : '~13,000 average' },
+  { label: isES ? 'Seguidores Facebook'  : 'Facebook followers', value: '3,000' },
+  { label: isES ? 'Prensa'               : 'Press',              value: isES ? 'Classic Rock Magazine (RU) · Popular 1 (España)' : 'Classic Rock Magazine (UK) · Popular 1 (Spain)' },
+];
+---
+
+<!-- ── Section 1: Hero ── -->
+<section class="pp-hero">
+  <div class="pp-hero-inner container">
+    <div class="pp-hero-art">
+      <Image
+        src={dosAlbumCover}
+        alt="The Midnight Calls — DOS album cover"
+        class="pp-album-cover"
+        widths={[400, 600, 800]}
+        sizes="(max-width: 768px) 280px, 420px"
+      />
+    </div>
+    <div class="pp-hero-text">
+      <p class="pp-kicker">The Midnight Calls · Press</p>
+      <h1 class="pp-album-title">DOS</h1>
+      <p class="pp-hook">{t('pressPage.heroHook')}</p>
+      <div class="pp-hero-ctas">
+        {/* TODO: Replace #epk-download with PDF one-sheet URL once generated */}
+        <a href="#epk-download" class="btn-outline">{t('pressPage.epkCta')}</a>
+      </div>
+      <p class="pp-stream-note">
+        {isES
+          ? <>Para escuchas anticipadas, entrevistas o copias de reseña — <a href="mailto:themidnightcallsofficial@gmail.com">themidnightcallsofficial@gmail.com</a></>
+          : <>For advance streams, interviews, or review copies — <a href="mailto:themidnightcallsofficial@gmail.com">themidnightcallsofficial@gmail.com</a></>
+        }
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 2: Bio ── -->
+<section class="section alt-bg" id="pp-bio">
+  <div class="container">
+    <span class="mag-label">{t('pressPage.bioHeading')}</span>
+    <div class="pp-bio-body">
+      <p set:html={bioParagraph}></p>
+      {/* TODO: Build full bio pages at /press/bio-en and /es/press/bio-es */}
+      <a href={bioLink.href} class="pp-bio-link">{bioLink.label} →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 3: Music ── -->
+<section class="section" id="pp-music">
+  <div class="container">
+    <span class="mag-label">{t('pressPage.musicHeading')}</span>
+    <div class="pp-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/LdWKxYnJZL4"
+        title={isES ? 'Objectophilia — The Midnight Calls (videoclip oficial)' : 'Objectophilia — The Midnight Calls (official video)'}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+    <div class="pp-stream-row">
+      <a href={socials.spotify}    target="_blank" rel="noopener" class="stream-chip">Spotify</a>
+      <a href={socials.appleMusic} target="_blank" rel="noopener" class="stream-chip">Apple Music</a>
+      <a href={socials.bandcamp}   target="_blank" rel="noopener" class="stream-chip">Bandcamp</a>
+      <a href={socials.youtube}    target="_blank" rel="noopener" class="stream-chip">YouTube</a>
+    </div>
+    <p class="pp-music-note">{t('pressPage.musicNote')}</p>
+  </div>
+</section>
+
+<!-- ── Section 4: Press Quotes ── -->
+<section class="section alt-bg" id="pp-quotes">
+  <div class="container">
+    <span class="mag-label">{t('pressPage.quotesHeading')}</span>
+    <div class="pp-quotes-grid">
+
+      <!-- Popular 1 -->
+      <div class="pp-quote-card pp-quote-p1">
+        <div class="pp-quote-outlet">
+          <div class="pp-p1-mags">
+            <Image src={popular1Review} alt="Popular 1 review" class="pp-p1-review" />
+            <Image src={popular1Cover}  alt="Popular 1 cover"  class="pp-p1-cover" />
+          </div>
+        </div>
+        <blockquote class="pp-blockquote">
+          <p class="pp-quote-text">
+            "Son de esas bandas que, después de verlas y escucharlas, te hacen pensar en ese momento que son los mejores del mundo."
+          </p>
+          {isES && (
+            <p class="pp-quote-translation">
+              "They are one of those bands that, after seeing and hearing them, makes you think in that moment they are the best in the world."
+            </p>
+          )}
+          <footer class="pp-quote-source">— Fernando Tanxencias · <strong>Popular 1</strong> (España) · 8/10</footer>
+        </blockquote>
+      </div>
+
+      <!-- Classic Rock Magazine -->
+      <div class="pp-quote-card pp-quote-cr">
+        <div class="pp-quote-outlet">
+          <Image src={classicRockLogo} alt="Classic Rock Magazine" class="pp-cr-logo" />
+        </div>
+        <blockquote class="pp-blockquote">
+          <p class="pp-quote-text">
+            "Warm, swaggering 70s hard rock, spiced with bluesy slide guitar for a southern-tinged finish... Tasty."
+          </p>
+          <footer class="pp-quote-source">— <strong>Classic Rock Magazine</strong> (UK)</footer>
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 5: Press Photos ── -->
+<section class="section" id="pp-photos">
+  <div class="container">
+    <span class="mag-label">{t('pressPage.photosLabel')}</span>
+    <h2 class="mag-heading">{t('pressPage.photosHeading')}</h2>
+    <div class="pp-photo-grid">
+      {pressPhotos.map((photo) => (
+        <div class="pp-photo-item">
+          <div class="pp-photo-thumb">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              widths={[400, 700]}
+              sizes="(max-width: 768px) 100vw, 380px"
+              class="pp-photo-img"
+            />
+          </div>
+          <div class="pp-photo-meta">
+            <span class="pp-photo-label">{photo.label}</span>
+            <a href={photo.file} download class="pp-photo-dl btn-outline btn-sm">
+              {t('pressPage.photoDownload')} ↓
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 6: Tour Dates ── -->
+<section class="section alt-bg" id="pp-tour">
+  <div class="container">
+    <span class="mag-label">{t('pressPage.tourHeading')}</span>
+    <h2 class="mag-heading">{t('pressPage.tourHeading')}</h2>
+
+    <p class="us-subhead">{t('pressPage.usLabel')}</p>
+    {usDates.map((s) => (
+      <div class="tour-row">
+        <span class="tour-date">{s.date}</span>
+        <span class="tour-venue">{s.venue}</span>
+        <span class="tour-city">{s.city}{s.notes ? <em> · {s.notes}</em> : null}</span>
+        <span></span>
+      </div>
+    ))}
+
+    <div class="pp-tour-divider"></div>
+
+    <p class="spain-label">{t('pressPage.spainLabel')}</p>
+    <h3 class="spain-h">{isES ? 'Gira Europea' : 'European Tour'}</h3>
+    {spainDates.map((s) => (
+      <div class="spain-row">
+        <span class="spain-d">{s.date}</span>
+        <span class="spain-v">{s.venue}</span>
+        <span class="spain-c">{s.city}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- ── Section 7: Contact ── -->
+<section class="section" id="pp-contact">
+  <div class="container pp-contact-wrap">
+    <span class="mag-label">{t('pressPage.contactHeading')}</span>
+    <p class="pp-contact-intro">{t('pressPage.contactIntro')}</p>
+    <a href="mailto:themidnightcallsofficial@gmail.com" class="pp-email-link">
+      themidnightcallsofficial@gmail.com
+    </a>
+  </div>
+</section>
+
+<!-- ── Section 8: Stats (below the fold) ── -->
+<section class="section alt-bg pp-stats-section" id="pp-stats">
+  <div class="container">
+    <span class="mag-label pp-stats-label">{t('pressPage.statsHeading')}</span>
+    <div class="pp-stats-row">
+      {stats.map((s) => (
+        <div class="pp-stat-card">
+          <span class="pp-stat-value">{s.value}</span>
+          <span class="pp-stat-label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+/* ── Press Page Hero ── */
+.pp-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+  background: radial-gradient(ellipse at 60% 50%, rgba(232, 24, 106, 0.08) 0%, transparent 70%);
+}
+.pp-hero-inner {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.pp-album-cover {
+  width: 100%;
+  max-width: 420px;
+  box-shadow:
+    0 0 0 1px rgba(232, 24, 106, 0.15),
+    0 30px 100px var(--pink-glow),
+    0 60px 160px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+}
+.pp-album-cover:hover { transform: scale(1.015); }
+.pp-kicker {
+  font-family: var(--bf);
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+.pp-album-title {
+  font-family: var(--hf);
+  font-size: clamp(80px, 12vw, 160px);
+  color: var(--pink);
+  line-height: 0.88;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+.pp-hook {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 36px;
+  border-left: 2px solid var(--pink);
+  padding-left: 16px;
+}
+.pp-hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.pp-stream-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 460px;
+}
+.pp-stream-note a {
+  color: var(--pink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+.pp-stream-note a:hover { opacity: 0.75; }
+
+/* ── Bio ── */
+.pp-bio-body {
+  max-width: 760px;
+}
+.pp-bio-body p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+.pp-bio-body em { color: var(--text); font-style: italic; }
+.pp-bio-link {
+  display: inline-block;
+  color: var(--pink);
+  font-family: var(--bf);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+.pp-bio-link:hover { opacity: 0.7; }
+
+/* ── Video ── */
+.pp-video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 28px;
+  background: #1a1520;
+}
+.pp-video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.pp-stream-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.pp-music-note {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  max-width: 640px;
+  border-left: 2px solid var(--border);
+  padding-left: 14px;
+}
+
+/* ── Press Quotes ── */
+.pp-quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.pp-quote-card {
+  padding: 40px;
+  border: 1px solid rgba(232, 24, 106, 0.15);
+  background: rgba(232, 24, 106, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.pp-p1-mags {
+  position: relative;
+  height: 180px;
+}
+.pp-p1-review {
+  position: absolute;
+  width: 110px;
+  left: 0; top: 0;
+  transform: rotate(-4deg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+.pp-p1-cover {
+  position: absolute;
+  width: 100px;
+  right: 0; top: 30px;
+  transform: rotate(3.5deg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.pp-cr-logo {
+  width: 140px;
+  height: auto;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+.pp-blockquote {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pp-quote-text {
+  font-family: var(--tf);
+  font-size: clamp(17px, 2vw, 24px);
+  line-height: 1.65;
+  color: var(--text);
+}
+.pp-quote-translation {
+  font-family: var(--bf);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+.pp-quote-source {
+  font-family: var(--bf);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-top: auto;
+}
+.pp-quote-source strong { font-weight: 500; }
+
+/* ── Press Photos ── */
+.pp-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pp-photo-item { display: flex; flex-direction: column; gap: 10px; }
+.pp-photo-thumb {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #1a1520;
+}
+.pp-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.pp-photo-thumb:hover .pp-photo-img { transform: scale(1.04); }
+.pp-photo-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.pp-photo-label {
+  font-family: var(--bf);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.pp-photo-dl {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ── Tour (press page variant) ── */
+.pp-tour-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 48px 0 40px;
+}
+
+/* ── Contact ── */
+.pp-contact-wrap {
+  text-align: center;
+}
+.pp-contact-intro {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 28px;
+}
+.pp-email-link {
+  display: inline-block;
+  font-family: var(--hf);
+  font-size: clamp(20px, 3vw, 36px);
+  letter-spacing: 2px;
+  color: var(--pink);
+  border-bottom: 1px solid rgba(232, 24, 106, 0.4);
+  padding-bottom: 4px;
+  transition: opacity 0.2s;
+}
+.pp-email-link:hover { opacity: 0.75; }
+
+/* ── Stats ── */
+.pp-stats-section { padding: 72px 0; }
+.pp-stats-label { font-size: 10px; }
+.pp-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+  background: var(--border);
+}
+.pp-stat-card {
+  background: var(--bg2);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pp-stat-value {
+  font-family: var(--hf);
+  font-size: clamp(18px, 2vw, 26px);
+  letter-spacing: 1px;
+  color: var(--pink);
+  line-height: 1.2;
+}
+.pp-stat-label {
+  font-family: var(--bf);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .pp-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .pp-hero-art { display: flex; justify-content: center; }
+  .pp-album-cover { max-width: 300px; }
+  .pp-hook { margin-left: auto; margin-right: auto; }
+  .pp-hero-ctas { justify-content: center; }
+  .pp-quotes-grid { grid-template-columns: 1fr; }
+  .pp-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .pp-stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .pp-hero { padding: 100px 0 60px; min-height: auto; }
+  .pp-photo-grid { grid-template-columns: 1fr; }
+  .pp-stats-row { grid-template-columns: 1fr; }
+  .pp-stats-section { padding: 48px 0; }
+}
+</style>

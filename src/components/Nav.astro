@@ -27,13 +27,18 @@ const otherPath = switchLocale(currentPath, otherLocale);
   <div class="overlay-dim"></div>
   <button class="overlay-close" id="nav-close" aria-label="Close menu">×</button>
   <nav class="overlay-nav">
-    {NAV_ROUTES.map(({ key, anchor }, i) => (
-      <a
-        href={`${localePath(locale, '/')}#${anchor}`}
-        class="overlay-link"
-        style={`transition-delay: ${i * 0.05}s`}
-      >{t(`nav.${key}`)}</a>
-    ))}
+    {NAV_ROUTES.map((route, i) => {
+      const href = route.path
+        ? localePath(locale, route.path)
+        : `${localePath(locale, '/')}#${route.anchor}`;
+      return (
+        <a
+          href={href}
+          class="overlay-link"
+          style={`transition-delay: ${i * 0.05}s`}
+        >{t(`nav.${route.key}`)}</a>
+      );
+    })}
   </nav>
   <div class="overlay-socials">
     <a href={socials.instagram} target="_blank" rel="noopener" class="social-link">Instagram</a>

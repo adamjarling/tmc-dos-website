@@ -11,17 +11,21 @@ export function localePath(locale: string | undefined, path: string): string {
   return getRelativeLocaleUrl(locale ?? 'en', path);
 }
 
-/** Nav routes — all sections are hash anchors on the homepage. */
-export const NAV_ROUTES = [
+type AnchorRoute = { key: string; anchor: string; path?: never };
+type PathRoute   = { key: string; path: string;   anchor?: never };
+export type NavRoute = AnchorRoute | PathRoute;
+
+/** Nav routes — hash anchors on the homepage, or a standalone path for dedicated pages. */
+export const NAV_ROUTES: NavRoute[] = [
   { key: 'about',   anchor: 'about' },
   { key: 'music',   anchor: 'music' },
   { key: 'tour',    anchor: 'tour' },
   { key: 'gallery', anchor: 'gallery' },
   { key: 'videos',  anchor: 'videos' },
   { key: 'merch',   anchor: 'merch' },
-  { key: 'press',   anchor: 'press' },
+  { key: 'press',   path: 'press' },
   { key: 'contact', anchor: 'contact' },
-] as const;
+];
 
 /**
  * Given the current pathname (e.g. "/es/music" or "/tour"), return the
