@@ -97,7 +97,9 @@
     "sub": "Nuevos lanzamientos, fechas de gira y contenido exclusivo — directo a tu bandeja de entrada. Sin algoritmos.",
     "placeholder": "tu@email.com",
     "subscribe": "Suscribirme",
-    "confirm": "Listo. ¡A rocanrolear!"
+    "confirm": "Listo. ¡A rocanrolear!",
+    "emailLabel": "Consultas generales",
+    "bookingLabel": "Booking — España"
   },
   "success": {
     "heading": "¡Ya Estás Dentro!",

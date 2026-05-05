@@ -97,7 +97,9 @@
     "sub": "New releases, tour dates, and exclusive content — straight to your inbox. No algorithm required.",
     "placeholder": "your@email.com",
     "subscribe": "Subscribe",
-    "confirm": "You're in. Rock on."
+    "confirm": "You're in. Rock on.",
+    "emailLabel": "General Inquiries",
+    "bookingLabel": "Booking — Spain"
   },
   "success": {
     "heading": "You're In!",

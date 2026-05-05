@@ -1,5 +1,7 @@
 ---
 import { useTranslations, type Locale } from '../i18n/ui';
+import { Image } from 'astro:assets';
+import lestratoLogo from '../assets/media/lestrato_logo.jpg';
 
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
@@ -47,6 +49,33 @@ const formOptions = JSON.stringify({
           </div>
         </div>
       </form>
+
+      <p class="contact-email-label">{t('contact.emailLabel')}</p>
+      <p class="contact-email-wrap">
+        <span id="contact-email"></span>
+      </p>
+
+      <div class="booking-card">
+        <p class="contact-email-label">{t('contact.bookingLabel')}</p>
+        <a href="https://www.facebook.com/lestrato.rockconciertos/" target="_blank" rel="noopener" class="booking-logo-link">
+          <Image src={lestratoLogo} alt="Lestrato Rock Conciertos" class="booking-logo" />
+        </a>
+        <p class="booking-name">Lestrato Rock Conciertos</p>
+        <p class="contact-email-wrap"><span id="booking-email"></span></p>
+        <a href="https://www.facebook.com/lestrato.rockconciertos/" target="_blank" rel="noopener" class="booking-social">Facebook</a>
+      </div>
+
+      <script>
+        const u = 'themidnightcallsofficial';
+        const d = 'gmail' + '.' + 'com';
+        const el = document.getElementById('contact-email');
+        if (el) el.innerHTML = '<a href="mailto:' + u + '@' + d + '">' + u + '@' + d + '</a>';
+
+        const bu = 'info';
+        const bd = 'lestrato' + '.' + 'com';
+        const bel = document.getElementById('booking-email');
+        if (bel) bel.innerHTML = '<a href="mailto:' + bu + '@' + bd + '">' + bu + '@' + bd + '</a>';
+      </script>
     </div>
   </div>
 </section>
@@ -60,13 +89,32 @@ const formOptions = JSON.stringify({
     max-width: 100% !important;
     font-family: 'DM Sans', sans-serif !important;
   }
-  /* Side-by-side layout — grid overrides Kit's flex: 1 0 100% stacking default */
+  /* Constrain form to a proportional width and centre it */
+  :global(.formkit-form[data-format="inline"]) {
+    width: 100% !important;
+    max-width: 480px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Side-by-side layout — grid overrides Kit's flex stacking and JS-injected widths */
   :global(.seva-fields.formkit-fields) {
     display: grid !important;
     grid-template-columns: 1fr auto !important;
+    gap: 0 !important;
+    align-items: stretch !important;
     margin: 0 !important;
+    width: 100% !important;
   }
-  :global(.seva-fields .formkit-field) { margin: 0 !important; }
+  :global(.seva-fields .formkit-field) {
+    margin: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  :global(.seva-fields .formkit-input) {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
   :global(.seva-fields .formkit-submit) { margin: 0 !important; width: auto !important; }
 
   :global(.formkit-input) {
@@ -107,4 +155,48 @@ const formOptions = JSON.stringify({
     justify-content: center !important;
     opacity: 0.4 !important;
   }
+
+  .contact-email-label {
+    margin-top: 40px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .contact-email-wrap {
+    margin-top: 6px;
+    font-family: var(--bf);
+    font-size: 15px;
+  }
+  .contact-email-wrap a {
+    color: var(--pink);
+    text-decoration: none;
+  }
+  .contact-email-wrap a:hover { text-decoration: underline; }
+
+  .booking-card {
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .booking-logo-link { display: inline-block; margin: 12px 0 4px; }
+  .booking-logo { height: 64px; width: auto; object-fit: contain; }
+  .booking-name {
+    font-family: var(--hf);
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+  .booking-social {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .booking-social:hover { color: var(--pink); }
 </style>
