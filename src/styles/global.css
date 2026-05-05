@@ -320,6 +320,8 @@ a { color: inherit; text-decoration: none; }
 .merch-desc { color: var(--muted); font-size: 12px; margin-top: 3px; }
 .merch-row { display: flex; justify-content: space-between; align-items: flex-start; }
 .merch-price { color: var(--pink); font-family: var(--hf); font-size: 20px; }
+.merch-order-btn { color: var(--pink); font-family: var(--hf); font-size: 20px; text-decoration: none; }
+.merch-order-btn:hover { text-decoration: underline; }
 
 /* ── press ── */
 .press-featured {
@@ -343,6 +345,20 @@ a { color: inherit; text-decoration: none; }
   position: absolute; width: 185px; height: auto;
   right: 10px; top: 50px;
   transform: rotate(3.5deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  z-index: 1;
+}
+.p1i-photo {
+  position: absolute; width: 210px; height: auto;
+  left: 10px; top: 10px;
+  transform: rotate(3deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  z-index: 2;
+}
+.p1i-cover {
+  position: absolute; width: 175px; height: auto;
+  right: 10px; top: 60px;
+  transform: rotate(-3.5deg);
   box-shadow: 0 20px 60px rgba(0,0,0,0.7);
   z-index: 1;
 }

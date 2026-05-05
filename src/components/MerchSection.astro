@@ -1,14 +1,19 @@
 ---
 import { useTranslations, type Locale } from '../i18n/ui';
+import { Image } from 'astro:assets';
+import vinylMockup from '../assets/media/vinyl_mockup.png';
+import cdMockup from '../assets/media/cd_mockup.png';
 
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 
-const items = [
-  { key: 'vinyl', price: '$28' },
+const MERCH_URL = 'https://themidnightcalls.bandcamp.com/merch';
+
+const items: { key: string; price: string; image?: ImageMetadata; href?: string }[] = [
+  { key: 'vinyl', price: '$28', image: vinylMockup, href: MERCH_URL },
   { key: 'tee',   price: '$25' },
-  { key: 'cap',   price: '$20' },
-] as const;
+  { key: 'cd',    price: '$15', image: cdMockup,    href: MERCH_URL },
+];
 ---
 
 <section id="merch" class="section alt-bg">
@@ -19,14 +24,24 @@ const items = [
       {items.map((item) => (
         <div class="merch-card">
           <div class="merch-img">
-            <div class="merch-placeholder">{t(`merch.items.${item.key}.name`).toUpperCase()}</div>
+            {item.image && item.href ? (
+              <a href={item.href} target="_blank" rel="noopener">
+                <Image src={item.image} alt={t(`merch.items.${item.key}.name`)} />
+              </a>
+            ) : (
+              <div class="merch-placeholder">{t(`merch.items.${item.key}.name`).toUpperCase()}</div>
+            )}
           </div>
           <div class="merch-row">
             <div>
               <p class="merch-name">{t(`merch.items.${item.key}.name`)}</p>
               <p class="merch-desc">{t(`merch.items.${item.key}.desc`)}</p>
             </div>
-            <span class="merch-price">{t('merch.comingSoon')}</span>
+            {item.href ? (
+              <a href={item.href} target="_blank" rel="noopener" class="merch-order-btn">{t('hero.orderNow')}</a>
+            ) : (
+              <span class="merch-price">{t('merch.comingSoon')}</span>
+            )}
           </div>
         </div>
       ))}

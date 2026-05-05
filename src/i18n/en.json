@@ -79,7 +79,7 @@
     "items": {
       "vinyl": { "name": "DOS Vinyl LP", "desc": "Limited pressing" },
       "tee": { "name": "Tour Tee", "desc": "Black, sizes S–XXL" },
-      "cap": { "name": "Logo Cap", "desc": "Structured snapback" }
+      "cd": { "name": "DOS CD", "desc": "Limited pressing" }
     }
   },
   "press": {
@@ -87,7 +87,9 @@
     "heading": "Press",
     "intro": "For press inquiries, interviews, or EPK requests:",
     "contact": "Contact Press",
-    "epk": "Download EPK"
+    "epk": "Download EPK",
+    "interviewLabel": "Interview",
+    "interviewSrc": "Popular 1 (Spain) · Interview Feature"
   },
   "contact": {
     "label": "Stay in Touch",

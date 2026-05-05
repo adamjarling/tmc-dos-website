@@ -79,7 +79,7 @@
     "items": {
       "vinyl": { "name": "DOS Vinilo LP", "desc": "Edición limitada" },
       "tee": { "name": "Camiseta de Gira", "desc": "Negra, tallas S–XXL" },
-      "cap": { "name": "Gorra Logo", "desc": "Snapback estructurada" }
+      "cd": { "name": "DOS CD", "desc": "Edición limitada" }
     }
   },
   "press": {
@@ -87,7 +87,9 @@
     "heading": "Prensa",
     "intro": "Para entrevistas, prensa o solicitudes de EPK:",
     "contact": "Contacto Prensa",
-    "epk": "Descargar EPK"
+    "epk": "Descargar EPK",
+    "interviewLabel": "Entrevista",
+    "interviewSrc": "Popular 1 (España) · Entrevista destacada"
   },
   "contact": {
     "label": "Mantente al Día",

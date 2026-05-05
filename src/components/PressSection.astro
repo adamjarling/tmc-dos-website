@@ -5,6 +5,8 @@ import { Image } from 'astro:assets';
 import classicRockLogo from '../assets/media/classic-rock-logo.png';
 import popular1Cover from '../assets/media/popular1-cover.jpg';
 import popular1Review from '../assets/media/popular1-review.jpg';
+import popular1InterviewPhoto from '../assets/media/popular1-interview.jpg';
+import popular1InterviewCover from '../assets/media/popular1-interview-cover.jpg';
 
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
@@ -26,6 +28,18 @@ const [crQuote, p1Quote, tmcQuote] = pressQuotes;
       <div class="press-featured-quote">
         <p class="press-text">"{pickLocale(p1Quote.text, locale)}"</p>
         <p class="press-src">— {p1Quote.source}</p>
+      </div>
+    </div>
+
+    <!-- Popular 1 interview spread -->
+    <div class="press-featured">
+      <div class="press-mags">
+        <Image src={popular1InterviewPhoto} alt="Popular 1 interview with The Midnight Calls" class="p1i-photo" />
+        <Image src={popular1InterviewCover} alt="Popular 1 interview cover" class="p1i-cover" />
+      </div>
+      <div class="press-featured-quote">
+        <span class="press-src" style="margin-bottom:12px">{t('press.interviewLabel')}</span>
+        <p class="press-src">— {t('press.interviewSrc')}</p>
       </div>
     </div>
 
