@@ -17,9 +17,14 @@ const otherPath = switchLocale(currentPath, otherLocale);
     <a href={localePath(locale, '/')} class="nav-logo">
       <img src={logo.src} alt="The Midnight Calls" />
     </a>
-    <button class="hamburger" id="nav-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-controls">
+      <a href={otherPath} class="lang-toggle" aria-label={locale === 'en' ? 'Switch to Spanish' : 'Switch to English'}>
+        {locale === 'en' ? 'ES' : 'EN'}
+      </a>
+      <button class="hamburger" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -45,7 +50,6 @@ const otherPath = switchLocale(currentPath, otherLocale);
     <a href={socials.spotify}   target="_blank" rel="noopener" class="social-link">Spotify</a>
     <a href={socials.youtube}   target="_blank" rel="noopener" class="social-link">YouTube</a>
     <a href={socials.bandcamp}  target="_blank" rel="noopener" class="social-link">Bandcamp</a>
-    <a href={otherPath} class="social-link">{locale === 'en' ? 'Español' : 'English'}</a>
   </div>
 </div>
 
