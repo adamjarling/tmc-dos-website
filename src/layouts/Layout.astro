@@ -20,7 +20,7 @@ const desc = description ?? t('site.description');
 
 const siteUrl = 'https://themidnightcalls.com';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
-const ogImage = `${siteUrl}/og-image.jpeg`;
+const ogImage = `${siteUrl}/og-image.jpg`;
 const ogLocale = locale === 'es' ? 'es_ES' : 'en_US';
 
 // Build hreflang alternates: strip /es prefix for the en URL
