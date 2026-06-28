@@ -17,6 +17,26 @@ export type Single = {
 
 export const singles: Single[] = [
   {
+    title: 'Take the Money',
+    year: '2026',
+    cover: 'midnight-calls_take-the-money.png',
+    links: {
+      spotify: 'https://open.spotify.com/track/1EySp44uzf6U8mHNT2nyc8',
+      apple: 'https://music.apple.com/de/album/take-the-money-single/6778024713',
+      bandcamp: 'https://themidnightcalls.bandcamp.com/album/dos',
+    },
+  },
+  {
+    title: "When I'm Young",
+    year: '2026',
+    cover: 'midnight-calls_when-im-young.png',
+    links: {
+      spotify: 'https://open.spotify.com/track/7gbT5CjTj4Hcxv5aNchC4g',
+      apple: 'https://music.apple.com/de/song/when-im-young/6769861328',
+      bandcamp: 'https://themidnightcalls.bandcamp.com/album/dos',
+    },
+  },
+  {
     title: 'Objectophilia',
     year: '2025',
     cover: 'objectophilia-cover-fade_the-midnight-calls.jpg',

@@ -90,6 +90,12 @@ const coverByName = Object.fromEntries(
                   Stream
                 </a>
               )}
+              {track.available && !track.youtubeId && track.spotify && (
+                <a href={track.spotify}
+                   target="_blank" rel="noopener" class="stream-chip" style="font-size:10px;padding:5px 10px;">
+                  Stream
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -102,21 +108,39 @@ const coverByName = Object.fromEntries(
       <div class="singles-strip" style="margin-top:16px">
         {singles.map((s) => {
           const cover = s.cover ? coverByName[s.cover] : undefined;
-          const href = s.youtubeId ? `https://www.youtube.com/watch?v=${s.youtubeId}` : undefined;
-          const card = (
-            <div class="single-card">
-              <div class="single-art">
-                {cover
-                  ? <Image src={cover} alt={s.title} widths={[200, 400]} />
-                  : <div class="single-placeholder"><span>{s.title.toUpperCase()}</span></div>}
-              </div>
-              <p class="single-title">{s.title}</p>
-              <p class="single-year">{s.year}</p>
+          const youtubeHref = s.youtubeId ? `https://www.youtube.com/watch?v=${s.youtubeId}` : undefined;
+          type Chip = { label: string; href: string };
+          const streamChips: Chip[] = s.links ? [
+            s.links.spotify  && { label: 'Spotify',     href: s.links.spotify },
+            s.links.apple    && { label: 'Apple Music', href: s.links.apple },
+            s.links.bandcamp && { label: 'Bandcamp',    href: s.links.bandcamp },
+            s.links.youtube  && { label: 'YouTube',     href: s.links.youtube },
+          ].filter((c): c is Chip => Boolean(c)) : [];
+          const art = (
+            <div class="single-art">
+              {cover
+                ? <Image src={cover} alt={s.title} widths={[200, 400]} />
+                : <div class="single-placeholder"><span>{s.title.toUpperCase()}</span></div>}
             </div>
           );
-          return href
-            ? <a href={href} target="_blank" rel="noopener" class="single-card-link">{card}</a>
-            : card;
+          return (
+            <div class="single-card">
+              {youtubeHref
+                ? <a href={youtubeHref} target="_blank" rel="noopener" class="single-card-link">{art}</a>
+                : art}
+              <p class="single-title">{s.title}</p>
+              <p class="single-year">{s.year}</p>
+              {streamChips.length > 0 && (
+                <div class="single-stream-chips">
+                  {streamChips.map((chip) => (
+                    <a href={chip.href} target="_blank" rel="noopener" class="stream-chip" style="font-size:10px;padding:5px 10px;">
+                      {chip.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
         })}
       </div>
     </div>
