@@ -253,6 +253,43 @@ a { color: inherit; text-decoration: none; }
 .track-num { color: var(--pink); font-family: var(--hf); font-size: 15px; min-width: 26px; letter-spacing: 1px; }
 .track-name { font-family: var(--hf); font-size: 20px; letter-spacing: 1px; flex: 1; }
 
+/* ── featured single ── */
+.featured-single {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+}
+.featured-single-img {
+  width: 100%; height: auto;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 60px var(--pink-glow);
+  transition: transform 0.3s ease;
+}
+.featured-single-art:hover .featured-single-img { transform: scale(1.03); }
+.featured-single-title {
+  font-family: var(--hf);
+  font-size: clamp(36px, 4.5vw, 64px);
+  letter-spacing: 1px; line-height: 1;
+  margin: 6px 0 6px;
+}
+.featured-single-artist {
+  font-family: var(--bf); font-size: 11px;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 28px;
+}
+.btn-spotify {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px;
+  background: #1DB954; color: #fff;
+  font-family: var(--bf); font-size: 13px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  transition: background 0.2s; border: none; cursor: pointer;
+}
+.btn-spotify:hover { background: #17a349; color: #fff; }
+
 /* ── singles ── */
 .singles-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
 .single-card-link { display: block; }
@@ -419,6 +456,8 @@ a { color: inherit; text-decoration: none; }
   .about-cols { columns: 1; }
   .members-strip { grid-template-columns: repeat(2, 1fr); }
   .album-feature { grid-template-columns: 1fr; }
+  .featured-single { grid-template-columns: 1fr; gap: 28px; }
+  .featured-single-art { max-width: 200px; }
   .singles-strip { grid-template-columns: repeat(3, 1fr); }
   .spain-spread { grid-template-columns: 1fr; }
   .spain-flyer { max-width: 240px; }

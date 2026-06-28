@@ -52,7 +52,9 @@
     "orderCta": "Order DOS on Bandcamp",
     "orderComingSoon": "Digital, CD and Vinyl pre-orders coming this week",
     "streamNote": "Singles available on streaming:",
-    "singlesLabel": "Singles"
+    "singlesLabel": "Singles",
+    "featuredLabel": "New Single · Out Now",
+    "featuredCta": "Listen on Spotify"
   },
   "tour": {
     "label": "Live Shows",
