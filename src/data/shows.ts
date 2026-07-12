@@ -1125,4 +1125,41 @@ export const shows: Show[] = [
       ticket: "",
     },
   },
+  {
+    datetime: "2026-07-31T20:00:00",
+    notes: "K-R",
+    venue: {
+      name: "115 Bourbon Street",
+      city: "Merrionette Park",
+      stateProvince: "IL",
+      country: "USA",
+      url: {
+        facebook: "https://www.facebook.com/115BourbonStreet?__cft__[0]=AZYRQG4_q0iEOuoZHjjniXd7eBdaAxfC4p3oOgMJ0pe1mfhGPA3ctfdHSiZArBgji-zAqAgFYMmbS24f0r69M9BwyAJ3sruEbsKFXMIPNdk94qVYMb_6nbWFCI_ngpXKCldMsj4dtTCdynkYHTDqJBUHVEWcjFVOn9uU3KFrTmpunA&__tn__=-]K-R",
+      },
+    },
+    url: {
+      facebook: "https://www.facebook.com/115BourbonStreet?__cft__[0]=AZYRQG4_q0iEOuoZHjjniXd7eBdaAxfC4p3oOgMJ0pe1mfhGPA3ctfdHSiZArBgji-zAqAgFYMmbS24f0r69M9BwyAJ3sruEbsKFXMIPNdk94qVYMb_6nbWFCI_ngpXKCldMsj4dtTCdynkYHTDqJBUHVEWcjFVOn9uU3KFrTmpunA&__tn__=-]K-R",
+      image: "",
+      ticket: "",
+    },
+  },
+  {
+    datetime: "2026-08-30T14:00:00",
+    notes: "with Block Party",
+    venue: {
+      name: "Thirsty Beaver",
+      city: "Crestwood",
+      stateProvince: "IL",
+      country: "USA",
+      url: {
+        facebook: "https://www.facebook.com/thirstybeavercrestwood/",
+        website: "https://www.thirstybeaverpubandgrub.com/",
+      },
+    },
+    url: {
+      facebook: "https://www.facebook.com/thirstybeavercrestwood/",
+      image: "",
+      ticket: "",
+    },
+  },
 ];
