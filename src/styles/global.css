@@ -256,19 +256,20 @@ a { color: inherit; text-decoration: none; }
 /* ── featured single ── */
 .featured-single {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: minmax(0, 480px) 1fr;
   gap: 48px;
   align-items: center;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 48px 0;
 }
-.featured-single-img {
-  width: 100%; height: auto;
+.featured-single-art {
+  position: relative; width: 100%; aspect-ratio: 16/9;
   box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 60px var(--pink-glow);
-  transition: transform 0.3s ease;
 }
-.featured-single-art:hover .featured-single-img { transform: scale(1.03); }
+.featured-single-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+}
 .featured-single-title {
   font-family: var(--hf);
   font-size: clamp(36px, 4.5vw, 64px);
@@ -289,6 +290,15 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.2s; border: none; cursor: pointer;
 }
 .btn-spotify:hover { background: #17a349; color: #fff; }
+.btn-youtube {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px;
+  background: #FF0000; color: #fff;
+  font-family: var(--bf); font-size: 13px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  transition: background 0.2s; border: none; cursor: pointer;
+}
+.btn-youtube:hover { background: #cc0000; color: #fff; }
 
 /* ── singles ── */
 .singles-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
@@ -457,7 +467,6 @@ a { color: inherit; text-decoration: none; }
   .members-strip { grid-template-columns: repeat(2, 1fr); }
   .album-feature { grid-template-columns: 1fr; }
   .featured-single { grid-template-columns: 1fr; gap: 28px; }
-  .featured-single-art { max-width: 200px; }
   .singles-strip { grid-template-columns: repeat(3, 1fr); }
   .spain-spread { grid-template-columns: 1fr; }
   .spain-flyer { max-width: 240px; }

@@ -1,5 +1,11 @@
 export const videos = [
   {
+    youTubeId: "VGB-FDPu9-M",
+    title: "The Midnight Calls - Take The Money (Official Video)",
+    description:
+      "\"You may think it's grand, but it wasn't easy selling our souls for the cause.\" Take The Money is the third single from The Midnight Calls' new album \"DOS\". Shot in Europe during their \"Spain & Portugal Tour 2026\", both video and song are an homage to life on the road for independent musicians. In this song, these \"righteous descendants of Cain\" wear their AC/DC influences on their sleeve both musically and lyrically, delivering that heavy Rock & Roll punch that we've come to expect from them. Play it loud and \"show no remorse\"!",
+  },
+  {
     youTubeId: "LdWKxYnJZL4",
     title: "The Midnight Calls - Objectophilia (Official Video)",
     description:
