@@ -1146,6 +1146,7 @@ export const shows: Show[] = [
   {
     datetime: "2026-08-30T14:00:00",
     notes: "with Block Party",
+    poster: "/posters/2026-08-30-thirsty-beaver.jpg",
     venue: {
       name: "Thirsty Beaver",
       city: "Crestwood",
@@ -1157,9 +1158,30 @@ export const shows: Show[] = [
       },
     },
     url: {
-      facebook: "https://www.facebook.com/thirstybeavercrestwood/",
+      facebook: "https://www.facebook.com/events/2934769406714282/",
       image: "",
       ticket: "",
+    },
+  },
+  {
+    datetime: "2026-10-30T20:00:00",
+    notes: "w/ The Cle Elum and The Handcuffs",
+    poster: "/posters/2026-10-30-reggies.jpg",
+    venue: {
+      name: "Reggies Shack",
+      city: "Chicago",
+      stateProvince: "IL",
+      country: "USA",
+      url: {
+        facebook: "https://www.facebook.com/reggiesrockclub",
+        website: "https://www.reggieslive.com/",
+      },
+    },
+    url: {
+      facebook: "https://www.facebook.com/events/2355208635014900/",
+      image: "",
+      ticket:
+        "https://www.ticketweb.com/event/the-cle-elum-the-midnight-reggies-banannas-shack-tickets/15042163",
     },
   },
 ];
