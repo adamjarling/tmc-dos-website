@@ -17,6 +17,16 @@ export type Single = {
 
 export const singles: Single[] = [
   {
+    title: 'Winter Song',
+    year: '2026',
+    cover: 'midnight-calls_winter-song.png',
+    links: {
+      spotify: 'https://open.spotify.com/album/448639LB78fy2UME5pjpdr',
+      apple: 'https://music.apple.com/us/album/winter-song-single/6794844838',
+      youtube: 'https://youtu.be/pl2rWvU2bPo',
+    },
+  },
+  {
     title: 'Take the Money',
     year: '2026',
     cover: 'midnight-calls_take-the-money.png',

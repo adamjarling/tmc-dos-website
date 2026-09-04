@@ -19,7 +19,7 @@ const photoByName = Object.fromEntries(
   <div class="container">
     <span class="mag-label">{t('gallery.label')}</span>
     <h2 class="mag-heading">{t('gallery.heading')}</h2>
-    <div class="photo-grid">
+    <div class="photo-grid" id="photo-grid">
       {livePhotos.map((p) => {
         const img = photoByName[p.file];
         if (!img) return null;
@@ -33,3 +33,15 @@ const photoByName = Object.fromEntries(
     </div>
   </div>
 </section>
+
+<script>
+  const grid = document.getElementById('photo-grid');
+  if (grid) {
+    const items = Array.from(grid.children);
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    for (const item of items) grid.appendChild(item);
+  }
+</script>

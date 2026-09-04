@@ -53,8 +53,8 @@
     "orderComingSoon": "Preventas digital, CD y vinilo disponibles esta semana",
     "streamNote": "Singles disponibles en streaming:",
     "singlesLabel": "Sencillos",
-    "featuredLabel": "Nuevo Video · Ya Disponible",
-    "featuredCta": "Ver en YouTube"
+    "featuredVideoLabel": "Nuevo Video · Ya Disponible",
+    "featuredSingleLabel": "Último Sencillo · Ya Disponible"
   },
   "tour": {
     "label": "Conciertos",

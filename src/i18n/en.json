@@ -53,8 +53,8 @@
     "orderComingSoon": "Digital, CD and Vinyl pre-orders coming this week",
     "streamNote": "Singles available on streaming:",
     "singlesLabel": "Singles",
-    "featuredLabel": "New Video · Out Now",
-    "featuredCta": "Watch on YouTube"
+    "featuredVideoLabel": "New Video · Out Now",
+    "featuredSingleLabel": "Latest Single · Out Now"
   },
   "tour": {
     "label": "Live Shows",
